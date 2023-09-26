@@ -1,4 +1,15 @@
+const config = require('../config')
 
+
+module.exports = {
+    visaType: function({visaType=null,filters=null}={}){
+        // Sign For Replace
+        const bq = '`';
+        const ms = '$';
+        const cll = '{';
+        const clr = '}';
+
+        const html = `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -189,13 +200,13 @@
                         <h4 class="moul color-cyan50 fs-10">មិនមែនអន្តោប្រវេសន្តនិងបច្ចេកវិទ្យា</h4>
                         <p class="khmer color-cyan italic fs-10">ការិយាល័យ ផ្តល់ទិដ្ឋាការ</p>
                         <p class="khmer color-cyan fs-10">ក្រុមផ្តល់ទិដ្ឋាការ ប្រចាំ អ.ក ភ្នំពេញ</p>
-                        <img width="80px" src="http://127.0.0.1:8080/assets/header-style.png" />
+                        <img width="80px" src="${config.baseUrl}assets/header-style.png" />
                     </div>
                     <div>
                         <div class="text-center">
                             <h4 class="moul color-cyan50 fs-11">ព្រះរាជាណាចក្រកម្ពុជា</h4>
                             <h4 class="moul color-cyan50 fs-11">ជាតិ សាសនា ព្រះមហាក្សត្រ</h4>
-                            <img width="100px" src="http://127.0.0.1:8080/assets/header-style.png" />
+                            <img width="100px" src="${config.baseUrl}assets/header-style.png" />
                         </div>
                     </div>
                 </header>
@@ -260,14 +271,14 @@
                 var lastDate = document.querySelector("#last-date");
                 var total = document.querySelector("#total");
 
-                const startDataString = '2023-09-01'
-                const endDataString = '2023-09-30'
+                const startDataString = '${filters.start_date}'
+                const endDataString = '${filters.end_date}'
         
-                const start = new Date(`${startDataString}`);
-                const end = new Date(`${endDataString}`);
+                const start = new Date(${bq}${ms}${cll}startDataString${clr}${bq});
+                const end = new Date(${bq}${ms}${cll}endDataString${clr}${bq});
         
-                var startDate = `${start.getDate()}-${start.getMonth()+1}-${start.getFullYear()}`;
-                var endDate = `${end.getDate()}-${end.getMonth()+1}-${end.getFullYear()}`;
+                var startDate = ${bq}${ms}${cll}start.getDate()${clr}-${ms}${cll}start.getMonth()+1${clr}-${ms}${cll}start.getFullYear()${clr}${bq};
+                var endDate = ${bq}${ms}${cll}end.getDate()${clr}-${ms}${cll}end.getMonth()+1${clr}-${ms}${cll}end.getFullYear()${clr}${bq};
         
                 var port = {
                     "PHN": { "title": "ភ្នំពេញ", "status": "រាជធានី" },
@@ -275,8 +286,8 @@
                     "SRP": { "title": "សៀមរាប", "status": "ក្រុង" },
                 };
 
-                var dataVisa = [{"id":"12f18104-36a2-5810-a811-e616e5314449","price":80,"ordering":12,"popular":0,"published":1,"sort_reports":4,"entries":"multiple","type":"T3","duration":3,"duration_type":"year","label":"ទិដ្ធាការទេសចរណ៍រយះពេលវែង"},{"id":"2342aa20-6cb6-53c8-9764-61bcac17bdcc","price":40,"ordering":10,"popular":0,"published":1,"sort_reports":2,"entries":"multiple","type":"T1","duration":1,"duration_type":"year","label":"ទិដ្ធាការទេសចរណ៍រយះពេលវែង"},{"id":"334b6b31-12a2-5bfc-bf4f-870c0954b343","price":0,"ordering":4,"popular":0,"published":1,"sort_reports":12,"entries":"single","type":"B","duration":3,"duration_type":"month","label":"ទិដ្ធាការផ្លូលការ"},{"id":"3a8b9d4c-b292-5153-b160-70f43a18999e","price":60,"ordering":11,"popular":0,"published":1,"sort_reports":3,"entries":"multiple","type":"T2","duration":2,"duration_type":"year","label":"ទិដ្ធាការទេសចរណ៍រយះពេលវែង"},{"id":"5bd20866-3478-53f7-bc79-d2aae304b443","price":75,"ordering":8,"popular":0,"published":1,"sort_reports":7,"entries":"multiple","type":"E2","duration":2,"duration_type":"year","label":"ទិដ្ធាការធម្មតារយះពេលវែង"},{"id":"afca48e9-59ea-5a28-b8a4-88e0cc6eda1c","price":35,"ordering":1,"popular":1,"published":1,"sort_reports":5,"entries":"single","type":"E","duration":1,"duration_type":"month","label":"ទិដ្ធាការធម្មតា"},{"id":"b756dcb0-3600-525d-bacb-285c0f1a07e2","price":0,"ordering":13,"popular":0,"published":1,"sort_reports":10,"entries":"multiple","type":"K","duration":0,"duration_type":"passport_expire_date","label":"ទិដ្ធាការពិសេស"},{"id":"b80c8fef-a677-5340-85fb-2c162d75df03","price":0,"ordering":3,"popular":0,"published":1,"sort_reports":11,"entries":"multiple","type":"A","duration":3,"duration_type":"month","label":"ទិដ្ធាការការទូត"},{"id":"c06243dc-eaed-5ddf-bc34-c28ae6c89ede","price":100,"ordering":9,"popular":0,"published":1,"sort_reports":8,"entries":"multiple","type":"E3","duration":3,"duration_type":"year","label":"ទិដ្ធាការធម្មតារយះពេលវែង"},{"id":"c093c7f6-6edf-595e-9539-70de788efbaa","price":0,"ordering":5,"popular":0,"published":1,"sort_reports":13,"entries":"single","type":"C","duration":3,"duration_type":"month","label":"ទិដ្ធាការបោរីភាព"},{"id":"c6577abe-8c0f-5a02-ac84-aa94c2247b1e","price":50,"ordering":7,"popular":0,"published":1,"sort_reports":6,"entries":"multiple","type":"E1","duration":1,"duration_type":"year","label":"ទិដ្ធាការធម្មតារយះពេលវែង"},{"id":"e1e5b788-f429-5a32-9f7e-63865921a5e5","price":30,"ordering":2,"popular":1,"published":1,"sort_reports":1,"entries":"single","type":"T","duration":1,"duration_type":"month","label":"ទិដ្ធាការទេសចរណ៍"},{"id":"ff6c5a08-b2fa-56b6-ac00-6830f4074b6a","price":15,"ordering":6,"popular":0,"published":1,"sort_reports":9,"entries":"single","type":"D","duration":5,"duration_type":"day","label":"ទិដ្ធាការឆ្លង់កាត់"}] 
-                var filters_data = "{\"data\": {\"K\": 6,\"T\": 2,\"B\": 1,\"E\": 1,\"T1\": 1},\"total\": 11,\"deleted\": 5,\"recreated\": 5,\"not_recreated\": 0}"
+                var dataVisa = ${JSON.stringify(visaType)} 
+                var filters_data = ${JSON.stringify(filters.data)}
                 var visaList = JSON.parse(filters_data)
                 var dataList = visaList["data"];
                 dataVisa.sort(function (a, b) { return a.sort_reports - b.sort_reports });
@@ -291,44 +302,47 @@
                     }
                 });
 
-                statusDate.innerHTML = `
+                statusDate.innerHTML = ${bq}
                 ស្តីពីចំនួនភ្ញៀវបរទេស ដែលបានមកសុំទិដ្ឋាការចូលព្រះរាជាណាចក្រកម្ពុជា
-                            នៅអាកាសយាន្តដ្ធាន ${port["SRP"]["title"]} ចាប់ពីថ្ងៃទី ${startDate}
-                            ដល់ថ្ងៃទី ${endDate} ។`;
+                            នៅអាកាសយាន្តដ្ធាន ${ms}${cll}port["SRP"]["title"]${clr} ចាប់ពីថ្ងៃទី ${ms}${cll}startDate${clr}
+                            ដល់ថ្ងៃទី ${ms}${cll}endDate${clr} ។${bq};
         
-                status1.innerHTML = `Status 1`;
-                status2.innerHTML = `Status 2`;
-                status3.innerHTML = `Status 3`;
-                total.innerHTML = `${visaList["total"]??0}`;
+                status1.innerHTML = ${bq}Status 1${bq};
+                status2.innerHTML = ${bq}Status 2${bq};
+                status3.innerHTML = ${bq}Status 3${bq};
+                total.innerHTML = ${bq}${ms}${cll}visaList["total"]??0${clr}${bq};
         
-                lastDate.innerHTML = `
-                ${port["SRP"]["status"]}${port["SRP"]["title"]}. ថ្ងៃទី ${end.getDate()} ខែ ${end.getMonth()+1} ឆ្នាំ ${end.getFullYear()}
-                `;
+                lastDate.innerHTML = ${bq}
+                ${ms}${cll}port["SRP"]["status"]}${ms}${cll}port["SRP"]["title"]}. ថ្ងៃទី ${ms}${cll}end.getDate()} ខែ ${ms}${cll}end.getMonth()+1} ឆ្នាំ ${ms}${cll}end.getFullYear()${clr}
+                ${bq};
         
                 price.forEach((value, i) => {
-                    visaType1.innerHTML += `
+                    visaType1.innerHTML += ${bq}
                         <div class="d-flex mb-8">
-                            <p class="text-start khmer fw-60 fs-9" style="width: 250px;">${i + 1}. ${value["label"]}</p>
-                            <p class="text-center khmer fw-60 fs-9" style="width: 60px;">${value["type"]}</p>
+                            <p class="text-start khmer fw-60 fs-9" style="width: 250px;">${ms}${cll}i + 1}. ${ms}${cll}value["label"]${clr}</p>
+                            <p class="text-center khmer fw-60 fs-9" style="width: 60px;">${ms}${cll}value["type"]}</p>
                             <p class="text-start khmer fw-50 fs-9" style="width: 80px;">ចំនួន =</p>
-                            <p class="text-center khmer fw-50 fs-9" style="width: 100px;">${dataList[value["type"]] ?? 0}</p>
+                            <p class="text-center khmer fw-50 fs-9" style="width: 100px;">${ms}${cll}dataList[value["type"]] ?? 0${clr}</p>
                             <p class="text-start khmer fw-50 fs-9" style="width: 80px;">នាក់</p>
                         </div>
-                        `;
-                    });
+                        ${bq};
+                    ${clr});
         
                 noPrice.forEach((value, i) => {
-                    visaType2.innerHTML += `
+                    visaType2.innerHTML += ${bq}
                         <div class="d-flex mb-8">
-                            <p class="text-start khmer fw-60 fs-9" style="width: 250px;">${i + 1}. ${value["label"]}</p>
-                            <p class="text-center khmer fw-60 fs-9" style="width: 60px;">${value["type"]}</p>
+                            <p class="text-start khmer fw-60 fs-9" style="width: 250px;">${ms}${cll}i + 1}. ${ms}${cll}value["label"]${clr}</p>
+                            <p class="text-center khmer fw-60 fs-9" style="width: 60px;">${ms}${cll}value["type"]}</p>
                             <p class="text-start khmer fw-50 fs-9" style="width: 80px;">ចំនួន =</p>
-                            <p class="text-center khmer fw-50 fs-9" style="width: 100px;">${dataList[value["type"]] ?? 0}</p>
+                            <p class="text-center khmer fw-50 fs-9" style="width: 100px;">${ms}${cll}dataList[value["type"]] ?? 0${clr}</p>
                             <p class="text-start khmer fw-50 fs-9" style="width: 80px;">នាក់</p>
                         </div>
-                        `;
-                    });
+                        ${bq};
+                    ${clr});
             </script>
         </body>
         </html>
-        
+        `
+        return  html
+    }
+}
