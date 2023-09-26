@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "3d972b7a-ae33-4586-aeff-97a92c3bceef",
+		"name": "Upload",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29221330"
+	},
+	"item": [
+		{
+			"name": "User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "user 1",
+							"type": "text"
+						},
+						{
+							"key": "visa",
+							"type": "file",
+							"src": "/C:/Users/PC 1/Downloads/Programs/visa.jpg"
+						},
+						{
+							"key": "passport",
+							"type": "file",
+							"src": "/C:/Users/PC 1/Downloads/Programs/passport.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8000/users/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Message",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8000/send_message",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"send_message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Templates (visa-type)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": {\r\n        \"K\": 6,\r\n        \"T\": 2,\r\n        \"B\": 1,\r\n        \"E\": 1,\r\n        \"T1\": 1\r\n    },\r\n    \"total\": 11,\r\n    \"deleted\": 5,\r\n    \"recreated\": 5,\r\n    \"not_recreated\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.88.209:8080/templates/visa_type?start_date=2023-09-01&end_date=2023-09-30&data={\"data\": {\"K\": 6,\"T\": 2,\"B\": 1,\"E\": 1,\"T1\": 1},\"total\": 11,\"deleted\": 5,\"recreated\": 5,\"not_recreated\": 0}",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"88",
+						"209"
+					],
+					"port": "8080",
+					"path": [
+						"templates",
+						"visa_type"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "2023-09-01"
+						},
+						{
+							"key": "end_date",
+							"value": "2023-09-30"
+						},
+						{
+							"key": "data",
+							"value": "{\"data\": {\"K\": 6,\"T\": 2,\"B\": 1,\"E\": 1,\"T1\": 1},\"total\": 11,\"deleted\": 5,\"recreated\": 5,\"not_recreated\": 0}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get PDF",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/pdf?report_by=visa_type",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pdf"
+					],
+					"query": [
+						{
+							"key": "report_by",
+							"value": "visa_type"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
