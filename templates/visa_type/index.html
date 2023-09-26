@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Visa Type</title>
+    </head>
+    <style>
+        @font-face {
+            font-family: Khmer;
+            src: url('../../assets/fonts/khmer/Khmer-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: Moul;
+            src: url('../../assets/fonts/moul/Moul-Regular.ttf');
+        }
+    
+        body {
+            max-width: 920px;
+            text-align: center;
+            margin: 0 auto;
+        }
+    
+        h2,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        span {
+            margin: 0;
+            padding: 0;
+        }
+    
+        main {
+            max-width: 920px;
+            background-color: #fff;
+        }
+    
+        /* font family */
+        .khmer {
+            font-family: 'Khmer', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .moul {
+            font-family: 'Moul', cursive;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* display */
+        .d-flex {
+            display: flex;
+            flex-flow: row nowrap;
+        }
+    
+        .items-start {
+            align-items: start;
+        }
+    
+        .items-center {
+            align-items: center;
+        }
+    
+        .justify-between {
+            justify-content: space-between;
+        }
+    
+        .justify-center {
+            justify-content: center;
+        }
+    
+        .justify-start {
+            justify-content: center;
+        }
+    
+        .flex-1 {
+            flex: 1;
+        }
+    
+        .flex-4 {
+            flex: 4;
+        }
+    
+        /* text color */
+        .color-cyan {
+            color: #0BACD5;
+        }
+    
+        .color-cyan50 {
+            color: #0BACD5;
+            font-weight: 500;
+        }
+    
+        /* text */
+        .text-center {
+            text-align: center;
+        }
+    
+        .text-start {
+            text-align: start;
+        }
+    
+        .text-end {
+            text-align: end;
+        }
+    
+    
+        /* padding */
+        .p-8 {
+            padding: 8px;
+        }
+    
+        .p-10 {
+            padding: 10px;
+        }
+    
+        .p-20 {
+            padding: 20px;
+        }
+    
+        /* margin */
+        .mb-8 {
+            margin-bottom: 8px;
+        }
+    
+    
+        /* font size */
+        .fs-8 {
+            font-size: 0.8rem;
+        }
+    
+        .fs-9 {
+            font-size: 0.9rem;
+        }
+    
+        .fs-10 {
+            font-size: 1rem;
+        }
+    
+        .fs-11 {
+            font-size: 1.1rem;
+        }
+    
+        .fs-12 {
+            font-size: 1.2rem;
+        }
+    
+        .fs-15 {
+            font-size: 1.5rem;
+        }
+    
+        /* font style */
+        .italic {
+            font-style: italic;
+        }
+    
+        .underline {
+            text-decoration: underline;
+        }
+    
+        /* font weight */
+        .fw-40 {
+            font-weight: 400;
+        }
+    
+        .fw-50 {
+            font-weight: 500;
+        }
+    
+        .fw-60 {
+            font-weight: 600;
+        }
+    </style>
+    
+    <body>
+        <main class="p-10">
+            <!-- header -->
+            <header class="d-flex items-start justify-between">
+                <div class="text-center">
+                    <h4 class="moul color-cyan50 fs-10">នាយកដ្ធានជនបរទេស</h4>
+                    <h4 class="moul color-cyan50 fs-10">មិនមែនអន្តោប្រវេសន្តនិងបច្ចេកវិទ្យា</h4>
+                    <p class="khmer color-cyan italic fs-10">ការិយាល័យ ផ្តល់ទិដ្ឋាការ</p>
+                    <p class="khmer color-cyan fs-10">ក្រុមផ្តល់ទិដ្ឋាការ ប្រចាំ អ.ក ភ្នំពេញ</p>
+                    <img width="80px" src="http://127.0.0.1:8080/assets/header-style.png" />
+                </div>
+                <div>
+                    <div class="text-center">
+                        <h4 class="moul color-cyan50 fs-11">ព្រះរាជាណាចក្រកម្ពុជា</h4>
+                        <h4 class="moul color-cyan50 fs-11">ជាតិ សាសនា ព្រះមហាក្សត្រ</h4>
+                        <img width="100px" src="http://127.0.0.1:8080/assets/header-style.png" />
+                    </div>
+                </div>
+            </header>
+    
+            <!-- welcome -->
+            <div class="text-center">
+                <h4 class="moul fw-50 underline fs-10">គោរពជូន</h4>
+                <h4 id="status-1" class="khmer fs-9">Text ...</h4>
+            </div>
+    
+            <!-- body -->
+            <div class="d-flex items-start justify-start">
+                <div class="flex-1">
+                    <h4 class="moul fw-50 underline fs-10">កម្មវត្តុៈ</h4>
+                </div>
+                <div class="flex-4">
+    
+                    <!-- status date -->
+                    <p id="status-date" class="text-start khmer fs-9"></p>
+    
+                    <h4 class="text-start moul fw-50 underline fs-9 mb-8">ក. ប្រភេទទិដ្ឋាការបង់អាករ</h4>
+                    <!-- visa 1 -->
+                    <div id="visa-1"></div>
+    
+                    <h4 class="text-start moul fw-50 underline fs-9 mb-8">ខ. ប្រភេទទិដ្ឋាការមិនបង់អាករ</h4>
+                    <!-- visa 2 -->
+                    <div id="visa-2"></div>
+    
+                    <div class="d-flex mb-8">
+                        <p class="text-end moul fw-50 fs-9" style="width: 360px;">សរុបភ្ញៀវចំនួន</p>
+                        <p style="width: 30px;"></p>
+                        <p id="total" class="text-center khmer fw-50 fs-9" style="width: 100px;">0</p>
+                        <p class="text-start khmer fw-50 fs-9" style="width: 80px;">នាក់</p>
+                    </div>
+    
+                    <div class="d-flex items-center justify-between">
+                        <h4 class="text-start moul fw-50 underline fs-9 mb-8">គ. ចំណុចគួរអោយកត់សំគាល់ៈ</h4>
+                        <h4 id="status-2" class="khmer fs-9" style="width: 300px;">Text ...</h4>
+                    </div>
+                    <p class="text-start khmer fs-9" style="width: 485px;">អាស្រ័យហេតុនេះសូម មេត្តា ពិនិត្យ និង ជ្រាបជា
+                        របាយការណ៍ដ៏ខ្ពង់ខ្ពស់ ។</p>
+                    <p class="khmer fs-9" style="width: 440px;">សូម មេត្តាទទួលនូវការគោរពដ៏ខ្ពង់ខ្ពស់ អំពីយើងខ្ញុំ ។</p>
+    
+                    <div class="d-flex items-start justify-between">
+                        <h4></h4>
+                        <div>
+                            <h4 id="status-3" class="khmer fs-9" style="width: 300px;">Text ...</h4>
+                            <p id="last-date" class="khmer fs-10"></p>
+                            <h4 class="moul fw-50 fs-10">ប្រធានក្រុមផ្តល់ទិដ្ឋាការ</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script>
+            var statusDate = document.querySelector("#status-date");
+            var visaType1 = document.querySelector("#visa-1");
+            var visaType2 = document.querySelector("#visa-2");
+            var status1 = document.querySelector("#status-1");
+            var status2 = document.querySelector("#status-2");
+            var status3 = document.querySelector("#status-3");
+            var lastDate = document.querySelector("#last-date");
+            var total = document.querySelector("#total");
+
+            const startDataString = '2023-09-01'
+            const endDataString = '2023-09-30'
+    
+            const start = new Date(`${startDataString}`);
+            const end = new Date(`${endDataString}`);
+    
+            var startDate = `${start.getDate()}-${start.getMonth()+1}-${start.getFullYear()}`;
+            var endDate = `${end.getDate()}-${end.getMonth()+1}-${end.getFullYear()}`;
+    
+            var port = {
+                "PHN": { "title": "ភ្នំពេញ", "status": "រាជធានី" },
+                "PSN": { "title": "ព្រះសីហនុ", "status": "ក្រុង" },
+                "SRP": { "title": "សៀមរាប", "status": "ក្រុង" },
+            };
+
+            var dataVisa = [{"id":"12f18104-36a2-5810-a811-e616e5314449","price":80,"ordering":12,"popular":0,"published":1,"sort_reports":4,"entries":"multiple","type":"T3","duration":3,"duration_type":"year","label":"ទិដ្ធាការទេសចរណ៍រយះពេលវែង"},{"id":"2342aa20-6cb6-53c8-9764-61bcac17bdcc","price":40,"ordering":10,"popular":0,"published":1,"sort_reports":2,"entries":"multiple","type":"T1","duration":1,"duration_type":"year","label":"ទិដ្ធាការទេសចរណ៍រយះពេលវែង"},{"id":"334b6b31-12a2-5bfc-bf4f-870c0954b343","price":0,"ordering":4,"popular":0,"published":1,"sort_reports":12,"entries":"single","type":"B","duration":3,"duration_type":"month","label":"ទិដ្ធាការផ្លូលការ"},{"id":"3a8b9d4c-b292-5153-b160-70f43a18999e","price":60,"ordering":11,"popular":0,"published":1,"sort_reports":3,"entries":"multiple","type":"T2","duration":2,"duration_type":"year","label":"ទិដ្ធាការទេសចរណ៍រយះពេលវែង"},{"id":"5bd20866-3478-53f7-bc79-d2aae304b443","price":75,"ordering":8,"popular":0,"published":1,"sort_reports":7,"entries":"multiple","type":"E2","duration":2,"duration_type":"year","label":"ទិដ្ធាការធម្មតារយះពេលវែង"},{"id":"afca48e9-59ea-5a28-b8a4-88e0cc6eda1c","price":35,"ordering":1,"popular":1,"published":1,"sort_reports":5,"entries":"single","type":"E","duration":1,"duration_type":"month","label":"ទិដ្ធាការធម្មតា"},{"id":"b756dcb0-3600-525d-bacb-285c0f1a07e2","price":0,"ordering":13,"popular":0,"published":1,"sort_reports":10,"entries":"multiple","type":"K","duration":0,"duration_type":"passport_expire_date","label":"ទិដ្ធាការពិសេស"},{"id":"b80c8fef-a677-5340-85fb-2c162d75df03","price":0,"ordering":3,"popular":0,"published":1,"sort_reports":11,"entries":"multiple","type":"A","duration":3,"duration_type":"month","label":"ទិដ្ធាការការទូត"},{"id":"c06243dc-eaed-5ddf-bc34-c28ae6c89ede","price":100,"ordering":9,"popular":0,"published":1,"sort_reports":8,"entries":"multiple","type":"E3","duration":3,"duration_type":"year","label":"ទិដ្ធាការធម្មតារយះពេលវែង"},{"id":"c093c7f6-6edf-595e-9539-70de788efbaa","price":0,"ordering":5,"popular":0,"published":1,"sort_reports":13,"entries":"single","type":"C","duration":3,"duration_type":"month","label":"ទិដ្ធាការបោរីភាព"},{"id":"c6577abe-8c0f-5a02-ac84-aa94c2247b1e","price":50,"ordering":7,"popular":0,"published":1,"sort_reports":6,"entries":"multiple","type":"E1","duration":1,"duration_type":"year","label":"ទិដ្ធាការធម្មតារយះពេលវែង"},{"id":"e1e5b788-f429-5a32-9f7e-63865921a5e5","price":30,"ordering":2,"popular":1,"published":1,"sort_reports":1,"entries":"single","type":"T","duration":1,"duration_type":"month","label":"ទិដ្ធាការទេសចរណ៍"},{"id":"ff6c5a08-b2fa-56b6-ac00-6830f4074b6a","price":15,"ordering":6,"popular":0,"published":1,"sort_reports":9,"entries":"single","type":"D","duration":5,"duration_type":"day","label":"ទិដ្ធាការឆ្លង់កាត់"}] 
+            var filters_data = "{\"data\": {\"K\": 6,\"T\": 2,\"B\": 1,\"E\": 1,\"T1\": 1},\"total\": 11,\"deleted\": 5,\"recreated\": 5,\"not_recreated\": 0}"
+            var visaList = JSON.parse(filters_data)
+            var dataList = visaList["data"];
+            dataVisa.sort(function (a, b) { return a.sort_reports - b.sort_reports });
+    
+            var noPrice = [];
+            var price = [];
+            dataVisa.forEach(val => {
+                if (val["price"] != 0) {
+                    price.push(val);
+                } else {
+                    noPrice.push(val);
+                }
+            });
+
+            statusDate.innerHTML = `
+            ស្តីពីចំនួនភ្ញៀវបរទេស ដែលបានមកសុំទិដ្ឋាការចូលព្រះរាជាណាចក្រកម្ពុជា
+                        នៅអាកាសយាន្តដ្ធាន ${port["SRP"]["title"]} ចាប់ពីថ្ងៃទី ${startDate}
+                        ដល់ថ្ងៃទី ${endDate} ។`;
+    
+            status1.innerHTML = `Status 1`;
+            status2.innerHTML = `Status 2`;
+            status3.innerHTML = `Status 3`;
+            total.innerHTML = `${visaList["total"]??0}`;
+    
+            lastDate.innerHTML = `
+            ${port["SRP"]["status"]}${port["SRP"]["title"]}. ថ្ងៃទី ${end.getDate()} ខែ ${end.getMonth()+1} ឆ្នាំ ${end.getFullYear()}
+            `;
+    
+            price.forEach((value, i) => {
+                visaType1.innerHTML += `
+                    <div class="d-flex mb-8">
+                        <p class="text-start khmer fw-60 fs-9" style="width: 250px;">${i + 1}. ${value["label"]}</p>
+                        <p class="text-center khmer fw-60 fs-9" style="width: 60px;">${value["type"]}</p>
+                        <p class="text-start khmer fw-50 fs-9" style="width: 80px;">ចំនួន =</p>
+                        <p class="text-center khmer fw-50 fs-9" style="width: 100px;">${dataList[value["type"]] ?? 0}</p>
+                        <p class="text-start khmer fw-50 fs-9" style="width: 80px;">នាក់</p>
+                    </div>
+                    `;
+                });
+    
+            noPrice.forEach((value, i) => {
+                visaType2.innerHTML += `
+                    <div class="d-flex mb-8">
+                        <p class="text-start khmer fw-60 fs-9" style="width: 250px;">${i + 1}. ${value["label"]}</p>
+                        <p class="text-center khmer fw-60 fs-9" style="width: 60px;">${value["type"]}</p>
+                        <p class="text-start khmer fw-50 fs-9" style="width: 80px;">ចំនួន =</p>
+                        <p class="text-center khmer fw-50 fs-9" style="width: 100px;">${dataList[value["type"]] ?? 0}</p>
+                        <p class="text-start khmer fw-50 fs-9" style="width: 80px;">នាក់</p>
+                    </div>
+                    `;
+                });
+        </script>
+    </body>
+    </html>
